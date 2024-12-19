@@ -11,7 +11,7 @@ from django.views.decorators.cache import never_cache
 
 #################################################################################
 
-def sig(request):
+def si(request):
   if request.user.is_authenticated:
          return redirect('home')
   if request.POST:
