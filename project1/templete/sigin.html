@@ -1,0 +1,55 @@
+{% extends 'main.html'%}
+{%block title%}Login{%endblock%}
+
+{%block content%}
+{% for message in messages %}
+<div class="alert alert-warning" role="alert">
+  {{message}}
+</div>
+{% endfor %}
+ <div class="container">
+    <div class="card card-custom">
+        <div class="card-header text-center">
+            <h1 class="mb-0">Sign In</h1>
+        
+        
+            <p class="card-body">Please enter your details below:</p>
+            <form method="post" enctype="multipart/form-data" >
+                {% csrf_token %}
+                <div class="form-group row">
+                    <label for="username" class="col-sm-4 col-form-label">Username</label>
+                    <div class="col-sm-8">
+                        <input type="text" id="username" name="username" class="form-control" required>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="email" class="col-sm-4 col-form-label">Email</label>
+                    <div class="col-sm-8">
+                        <input type="email" id="email" name="email" class="form-control" required>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="password1" class="col-sm-4 col-form-label">Password1</label>
+                    <div class="col-sm-8">
+                        <input type="password" id="password1" name="password1" class="form-control" required>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="password2" class="col-sm-4 col-form-label">Password2</label>
+                    <div class="col-sm-8">
+                        <input type="password" id="password2" name="password2" class="form-control" required>
+                    </div>
+                </div>
+
+                <div class="form-group text-center">
+                    <button type="submit" class="btn btn-primary">Sign In</button>
+                </div>
+            </form>
+        </div>
+       
+    </div>
+</div>
+{%endblock  %}
